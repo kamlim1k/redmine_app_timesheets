@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
   end
 
   def index
-    unless User.is_app_visible?('order_mgmt')
+    unless User.is_app_enabled?('order_mgmt')
       render_404
     else
       # search is extended to all orders, irrespective of user visibility
